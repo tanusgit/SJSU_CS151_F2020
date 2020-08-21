@@ -1,0 +1,13 @@
+Name: Tanusree Debnath
+Preferred name: Tanu
+Student id: 013897364
+Major: Computer Science
+Preferred email address: tanusree.debnath@sjsu.edu
+I am an undergarduate student.
+I am not a graduating senior, I am in 3rd year.
+I am not retaking this class.
+I have taken Operating syestems, Data structures and algorithms at SJSU.
+I like to learn different programming languages. But Java is my primary language.
+I want to learn more about GUI in Java. I have not implemented GUI in java
+yet. I want to know how we can GUI in Java using react, HTML, CSS and other frameworks. I want to know how we can conncet bakened application and program with GUI.
+
