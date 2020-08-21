@@ -9,5 +9,5 @@ I am not retaking this class.
 I have taken Operating syestems, Data structures and algorithms at SJSU.
 I like to learn different programming languages. But Java is my primary language.
 I want to learn more about GUI in Java. I have not implemented GUI in java
-yet. I want to know how we can GUI in Java using react, HTML, CSS and other frameworks. I want to know how we can conncet bakened application and program with GUI.
+yet. I want to know how we can implement GUI in Java using react, HTML, CSS and other frameworks. I want to know how we can conncet bakened application with GUI.
 
