@@ -3,7 +3,7 @@ Preferred name: Tanu
 Student id: 013897364
 Major: Computer Science
 Preferred email address: tanusree.debnath@sjsu.edu
-I am an undergarduate student.
+I am an undergraduate student.
 I am not a graduating senior, I am in 3rd year.
 I am not retaking this class.
 I have taken Operating syestems, Data structures and algorithms at SJSU.
