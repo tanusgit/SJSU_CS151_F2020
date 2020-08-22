@@ -2,7 +2,7 @@ package cs151;
 
 public class EmployeeTest {
 public static void main(String[] args) {
-	Employee emp1 = new Employee("Joe", "Smith", 45, 7894561, "San Jose", "Male", 123.2, 1, "parttime", 120.0);
+	Employee emp1 = new Employee("Joe", "Smith", 45, 7894561, "San Jose", "Male", 123.2, 1, "fulltime", 120000.0);
 	double salary  = emp1.calculatePay(2);
 	String strSalary = String.format("%.2f", salary);  
 	System.out.println("the employee should get paid $" + strSalary);
