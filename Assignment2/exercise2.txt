@@ -1,5 +1,12 @@
 Differences between primitive data type int and class Integer:
-Integer is a class and it has many inbuilt methods like Integer.parseInt() method. Integer class is a wrapper class which gives us the privilege to store the value of a string as an int. Int is a primitive data type and it has many limitations. We cannot use inbuilt functions on an int variable as int is a primitive type and it does not have any inbuilt methods. When we use generic we need to use Integer class to store int value. We have some inbuilt methods
-available in Integer class like toOctalString(), toBinaryString(), and toHexString() which can be used to convert an integer value to octal, binary and hexadecimal format. Integer class also has many methods like reverse(), rotateLeft() and rotateRight()which can be used to manipulate the values. But we can not perform these operations directly on an int variable as int does not have these builtin methods as int is not a class. If we wish to perform these operations on int, we
+Integer is a class and it has many inbuilt methods like Integer.parseInt() method.
+Integer class is a wrapper class which gives us the privilege to store the value of a string as an int.
+Int is a primitive data type and it has many limitations. We cannot use inbuilt functions on an int variable
+as int is a primitive type and it does not have any inbuilt methods. When we use generic we need to use Integer
+class to store int value. We have some inbuilt methods available in Integer class like toOctalString(),
+toBinaryString(), and toHexString() which can be used to convert an integer value to octal, binary and hexadecimal
+format. Integer class also has many methods like reverse(), rotateLeft() and rotateRight()which can be used to 
+manipulate the values. But we can not perform these operations directly on an int variable as int does not have 
+these builtin methods as int is not a class. If we wish to perform these operations on int, we
 need to write our own code there.
 
