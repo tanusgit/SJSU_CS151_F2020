@@ -1,8 +1,11 @@
 package cs151;
 
-public class Cat {
+public class Cat extends Animal{
 	public static void scratch(){
 		System.out.println("I am a cat, and I am scratching myself");
+	}
+	public static void swim() {
+		System.out.println("I am a cat, and I am swimming.");
 	}
 	
 	public static void walk() {
