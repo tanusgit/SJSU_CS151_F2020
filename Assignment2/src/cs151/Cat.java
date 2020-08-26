@@ -1,6 +1,6 @@
 package cs151;
 
-public class Cat extends Animal{
+public class Cat extends Domesticated{
 	public static void scratch(){
 		System.out.println("I am a cat, and I am scratching myself");
 	}
