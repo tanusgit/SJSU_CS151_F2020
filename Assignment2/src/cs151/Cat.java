@@ -1,10 +1,10 @@
 package cs151;
 
-public class Cat extends Domesticated{
-	public static void scratch(){
+public class Cat extends Animal implements Scratcher, Swimmer{
+	public void scratch(){
 		System.out.println("I am a cat, and I am scratching myself");
 	}
-	public static void swim() {
+	public void swim() {
 		System.out.println("I am a cat, and I am swimming.");
 	}
 	

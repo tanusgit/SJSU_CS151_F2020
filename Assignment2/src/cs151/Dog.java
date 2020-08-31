@@ -1,16 +1,16 @@
 package cs151;
 
-public class Dog extends Domesticated{
+public class Dog extends Animal implements Domesticated, Swimmer{
 	
 	public static void bark() {
 		System.out.println("I am a dog, and I am barking.");
 	}
 	
-	public static void swim() {
+	public void swim() {
 		System.out.println("I am a dog, and I am swimming.");
 	}
 	
-	public static void walk() {
+	public void walk() {
 		System.out.println("I am a dog, and I am walking.");
 	}
 	
