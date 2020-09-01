@@ -1,5 +1,5 @@
 package cs151;
 
-public interface Scratcher{
-	 public void scratch();
+public interface Scratcher {
+	public void scratch();
 }

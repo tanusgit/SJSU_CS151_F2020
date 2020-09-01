@@ -1,10 +1,11 @@
 package cs151;
 
-public class Racoon extends Animal{
-	public static void walk() {
+public class Racoon extends Animal {
+	public void walk() {
 		System.out.println("I am a racoon, and I am walking.");
 	}
-	public static void scratch(){
+
+	public void scratch() {
 		System.out.println("I am a racoon, and I am scratching myself");
 	}
 }
