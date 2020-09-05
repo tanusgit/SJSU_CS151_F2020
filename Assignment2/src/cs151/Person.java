@@ -1,12 +1,12 @@
 package cs151;
 
 public class Person {
-	String firstname, lastname;
-	int age;
-	int socialSecurityNumber;
-	String address;
-	String gender;
-	double weight;
+	private String firstname, lastname;
+	private int age;
+	private int socialSecurityNumber;
+	private String address;
+	private String gender;
+	private double weight;
 
 	public String getFirstname() {
 		return firstname;

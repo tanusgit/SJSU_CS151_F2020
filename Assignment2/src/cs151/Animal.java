@@ -10,12 +10,12 @@ public class Animal {
  * move(), sound(), eat(), sleep(), toString()
  */
 	
-	String race;
-	String name;
-	int age;
-	String gender;
-	String homeType;
-	int speed;
+	private String race;
+	private String name;
+	private int age;
+	private String gender;
+	private String homeType;
+	private int speed;
 	
 	public static void move() {
 		System.out.println("I am moving");

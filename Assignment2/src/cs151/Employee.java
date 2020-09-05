@@ -1,11 +1,11 @@
 package cs151;
 
 public class Employee extends Person{
-	int employeeId;
-	String employeeStatus;
-	double basePay;
-	double salary;
-	int unit;
+	private int employeeId;
+	private String employeeStatus;
+	private double basePay;
+	private double salary;
+	private int unit;
 	
 	//Joe Smith, a contractor, pay is $60/hr, should get paid or working 30 hours,
 	public double calculatePay(int unit) {
@@ -89,10 +89,10 @@ public class Employee extends Person{
 			unitstr = unit + " weeks ";
 		}
 		
-		res = firstname + " " + lastname  + ", a " + employeeStatus + " employee, "
-		+ "pay is $"  + basePays + ", working " + unitstr+ " ,"+ " age is " + age + ", social security number is " + 
-		socialSecurityNumber + ", address is " + address + ", gender is " + gender +
-		", weight is " + weight + ", employee id is " + employeeId ;
+		res = getFirstname() + " " + getLastname()  + ", a " + employeeStatus + " employee, "
+		+ "pay is $"  + basePays + ", working " + unitstr+ " ,"+ " age is " + getAge() + ", social security number is " + 
+		getSocialSecurityNumber() + ", address is " + getAddress() + ", gender is " + getGender() +
+		", weight is " + getWeight() + ", employee id is " + employeeId ;
 		System.out.println(res);
 	}
 	

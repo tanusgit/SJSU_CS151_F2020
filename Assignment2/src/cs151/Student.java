@@ -4,12 +4,12 @@ public class Student {
 //fields: first name, last name, age, gpa,
 //	major, department. Age should be an integer value.
 //	GPA should be a floating point value. 
-	String firstname;
-	String lastname;
-	int age;
-	double gpa;
-	String major;
-	String department;
+	private String firstname;
+	private String lastname;
+	private int age;
+	private double gpa;
+	private String major;
+	private String department;
 	Course course = new Course("CS151 Tue/Thur 6-7:15", "Eng101 Mon/Wed 10-11:15", "Hist100 Tue/Thur 1:30-2:45");
 
 	public Student(String firstname, String lastname, int age, double gpa, String major, String department) {
@@ -69,6 +69,14 @@ public class Student {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
+
+	
+	@Override
+	public String toString() {
+		return firstname + " " + lastname + ", " + age + ", " + gpa
+				+ ", " + major + ", " + department;
+	}
+
 
 	class Course {
 
