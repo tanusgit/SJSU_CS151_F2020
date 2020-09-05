@@ -1,6 +1,10 @@
 
 
 public class Dog extends Animal implements Domesticated, Swimmer {
+	
+	public Dog() {
+		super();
+	}
 
 	public static void bark() {
 		System.out.println("I am a dog, and I am barking.");

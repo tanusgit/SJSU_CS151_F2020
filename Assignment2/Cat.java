@@ -1,6 +1,11 @@
 
 
 public class Cat extends Animal implements Scratcher, Swimmer {
+	
+	public Cat() {
+		super();
+	}
+
 	public void scratch() {
 		System.out.println("I am a cat, and I am scratching myself");
 	}
