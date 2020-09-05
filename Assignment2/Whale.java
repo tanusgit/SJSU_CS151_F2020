@@ -1,4 +1,4 @@
-package cs151;
+
 
 public class Whale extends Animal implements Swimmer {
 	public void swim() {

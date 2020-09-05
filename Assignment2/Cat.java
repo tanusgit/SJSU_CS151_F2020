@@ -1,4 +1,4 @@
-package cs151;
+
 
 public class Cat extends Animal implements Scratcher, Swimmer {
 	public void scratch() {

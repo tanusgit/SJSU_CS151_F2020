@@ -1,4 +1,4 @@
-package cs151;
+
 
 public class Dog extends Animal implements Domesticated, Swimmer {
 

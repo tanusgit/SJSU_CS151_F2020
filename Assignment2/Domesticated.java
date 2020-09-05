@@ -1,4 +1,4 @@
-package cs151;
+
 
 public interface Domesticated {
 

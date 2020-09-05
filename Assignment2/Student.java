@@ -1,4 +1,4 @@
-package cs151;
+
 
 public class Student {
 //fields: first name, last name, age, gpa,

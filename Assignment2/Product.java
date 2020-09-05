@@ -1,4 +1,4 @@
-package cs151;
+
 
 public final class Product {
 	final String productName;

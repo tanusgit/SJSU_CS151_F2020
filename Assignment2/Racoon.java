@@ -1,4 +1,4 @@
-package cs151;
+
 
 public class Racoon extends Animal {
 	public void walk() {
