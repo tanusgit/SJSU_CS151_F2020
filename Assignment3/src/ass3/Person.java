@@ -54,4 +54,11 @@ public class Person {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", ssn=" + ssn
+				+ ", address=" + address + "]";
+	}
+	
+
 }
