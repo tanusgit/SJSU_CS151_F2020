@@ -7,6 +7,10 @@ public class Person {
 	private String ssn;
 	private Address address;
 
+	public Person() {
+
+	}
+
 	public Person(String firstName, String lastName, Address address) {
 		super();
 		this.firstName = firstName;
@@ -59,6 +63,5 @@ public class Person {
 		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", ssn=" + ssn
 				+ ", address=" + address + "]";
 	}
-	
 
 }
