@@ -6,7 +6,7 @@ public abstract class Employee {
 	private boolean directDeposit;
 
 	public Employee() {
-
+		id++;
 	}
 
 	Employee(String firstName, String lastName, Address address, int id) {
