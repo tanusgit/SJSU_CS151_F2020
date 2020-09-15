@@ -1,40 +1,42 @@
 package ass3;
 
-public abstract class Employee {
+public class Employee extends Person {
 	private int id;
 	private String educationLevel;
 	private boolean directDeposit;
-
 	public Employee() {
-		id++;
+		
+	}
+	public Employee(String firstName, String lastName, Address address) {
+		super(firstName, lastName, address);
 	}
 
-	Employee(String firstName, String lastName, Address address, int id) {
-
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
+	public Employee(String firstName, String lastName, Address address, int id) {
+		super(firstName, lastName, address);
 		this.id = id;
+	}
+
+	public int getID() {
+		return id;
 	}
 
 	public String getEducation() {
 		return educationLevel;
 	}
 
-	public void setEducation(String educationLevel) {
-		this.educationLevel = educationLevel;
-	}
-
 	public boolean getDirectDeposit() {
 		return directDeposit;
 	}
 
-	public void setDirectDeposit(boolean directDeposit) {
-		this.directDeposit = directDeposit;
+	public void setID(int id) {
+		this.id = id;
 	}
 
+	public void setEducation(String n) {
+		educationLevel = n;
+	}
+
+	public void setDirectDeposit(boolean m) {
+		directDeposit = m;
+	}
 }

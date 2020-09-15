@@ -4,9 +4,8 @@ public class Customer extends Person {
 	private int customerID;
 	private String paymentPreference;
 
-	public Customer() {
-		super();
-		customerID++;
+	public Customer(String preference) {
+		paymentPreference = preference;
 
 	}
 
@@ -33,15 +32,17 @@ public class Customer extends Person {
 
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", paymentPreference=" + paymentPreference + "]";
+		return "customer" + " = " + getFirstName() + " " + getLastName() + " " + getAddress() + " "
+				+ customerID + " " + paymentPreference;
 	}
 
 	public void introduce() {
-		String res = "Customer [customerID=" + customerID + ", paymentPreference=" + paymentPreference + "]";
+		String res = toString();
 		System.out.println(res);
 	}
 
 	public void makePayment() {
-
+		System.out.println("payment preference of the customer is " + paymentPreference);
 	}
+
 }

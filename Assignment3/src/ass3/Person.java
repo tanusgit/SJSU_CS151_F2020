@@ -1,67 +1,67 @@
 package ass3;
 
-public class Person {
-	private String firstName;
-	private String lastName;
-	private int age;
-	private String ssn;
-	private Address address;
+public abstract class Person {
+
+	private String FirstName, LastName;
+	private int Age;
+	private String SSN;
+	private Address Address;
 
 	public Person() {
 
 	}
 
 	public Person(String firstName, String lastName, Address address) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
+		FirstName = firstName;
+		LastName = lastName;
+		Address = address;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return FirstName;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		FirstName = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return LastName;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		LastName = lastName;
 	}
 
 	public int getAge() {
-		return age;
+		return Age;
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		Age = age;
 	}
 
-	public String getSsn() {
-		return ssn;
+	public String getSSN() {
+		return SSN;
 	}
 
-	public void setSsn(String ssn) {
-		this.ssn = ssn;
+	public void setSSN(String sSN) {
+		SSN = sSN;
 	}
 
 	public Address getAddress() {
-		return address;
+		return Address;
 	}
 
 	public void setAddress(Address address) {
-		this.address = address;
+		Address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", ssn=" + ssn
-				+ ", address=" + address + "]";
+		return "Person [FirstName=" + FirstName + ", LastName=" + LastName + ", Age=" + Age + ", SSN=" + SSN
+				+ ", Address=" + Address + "]";
 	}
 
+	
 }
