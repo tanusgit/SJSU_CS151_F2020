@@ -7,9 +7,18 @@ public abstract class Person {
 	private String SSN;
 	private Address Address;
 
+	public Person(String firstName, String lastName, Address address, String sSN ) {
+		super();
+		FirstName = firstName;
+		LastName = lastName;
+		SSN = sSN;
+		Address = address;
+	}
+
 	public Person() {
 
 	}
+	
 
 	public Person(String firstName, String lastName, Address address) {
 		FirstName = firstName;

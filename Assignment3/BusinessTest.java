@@ -65,13 +65,13 @@ public class BusinessTest {
 		ex8.makePayment();
 		System.out.println();
 		
-		Contractor ex9 = new Contractor("Nilu", "Williams", a9, 600000.0, 7);
+		Contractor ex9 = new Contractor("Nilu", "Williams", a9, 600000.0, 7, "784565");
 		ex9.introduce(true);
 		Double pay6 = ex9.computePay(23);
 		System.out.println("pay is " + pay6);
 		System.out.println();
 		
-		Contractor ex10 = new Contractor("Nilima", "Williams", a10, 600000.0, 8);
+		Contractor ex10 = new Contractor("Nilima", "Williams", a10, 600000.0, 8, "4565456");
 		ex10.introduce(true);
 		Double pay7 = ex10.computePay(23);
 		System.out.println("pay is " + pay7);

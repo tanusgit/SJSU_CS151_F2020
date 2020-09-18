@@ -4,13 +4,15 @@ public class Contractor extends Employee {
 	private Double basePay;
 	private Double baseHourlyPay;
 
+
 	public Contractor() {
 		System.out.println(basePay + " " + baseHourlyPay);
 	}
 
-	public Contractor(String firstName, String lastName, Address address, Double pay, int id) {
-		super(firstName, lastName, address, id);
+	public Contractor(String firstName, String lastName, Address address, Double pay, int id, String SSN) {
+		super(firstName, lastName, address, id, SSN);
 		basePay = pay;
+		
 	}
 
 	public Double getBasePay() {
@@ -28,7 +30,10 @@ public class Contractor extends Employee {
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		System.out.println(res + getSSN());
+		if(displaySSN == true) {
+			System.out.println(res + getSSN());
+		}
+		System.out.println(res);
 	}
 
 	public Double computePay(int numHrs) {
