@@ -14,12 +14,17 @@ public class FullTimeSalaried extends FullTimeEmployee {
 	@Override
 	public String toString() {
 		return "FullTimeSalaried employee = " + getFirstName() + " " + getLastName() + " " + getAddress()
-				+ getBasePay();
+		+ " $"+ getBasePay();
 	}
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		System.out.println(res + getSSN());
+		if (displaySSN == true) {
+			System.out.println(res + " and ssn is " + getSSN());
+		} else {
+			System.out.println(res);
+		}
+
 	}
 
 	public Double computePay(int numWeeks) {

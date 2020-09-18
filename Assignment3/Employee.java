@@ -10,6 +10,11 @@ public class Employee extends Person {
 	public Employee(String firstName, String lastName, Address address) {
 		super(firstName, lastName, address);
 	}
+	
+	public Employee(String firstName, String lastName, Address address, int id) {
+		super(firstName, lastName, address);
+		this.id = id;
+	}
 
 	public Employee(String firstName, String lastName, Address address, int id, String ssn) {
 		super(firstName, lastName, address, ssn);

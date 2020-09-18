@@ -22,12 +22,17 @@ public class FullTimeHourly extends FullTimeEmployee {
 
 	@Override
 	public String toString() {
-		return "FullTimeHourly employee " + getFirstName() + " " + getLastName() + " " + getAddress() + overtimePay;
+		return "FullTimeHourly employee " + getFirstName() + " " + getLastName() + " " + getAddress() + " $"+ overtimePay;
 	}
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		System.out.println(res + getSSN());
+		if (displaySSN == true) {
+			System.out.println(res + " and ssn is " + getSSN());
+		} else {
+			System.out.println(res);
+		}
+
 	}
 
 	public Double computePay(int numHrs) {

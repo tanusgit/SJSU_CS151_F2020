@@ -24,12 +24,17 @@ public class PartTimeHourly extends Employee {
 	@Override
 	public String toString() {
 		return "PartTimeHourly employee " + getFirstName() + " " + getLastName()
-		+ " " + getAddress() + baseHourlyPay ;
+		+ " " + getAddress() + " $"+ baseHourlyPay ;
 	}
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		System.out.println(res + getSSN());
+		if (displaySSN == true) {
+			System.out.println(res + " and ssn is " + getSSN());
+		} else {
+			System.out.println(res);
+		}
+
 	}
 	//assuming the base pay is hourly rate provided here
 	//this method retuns a Double so we cannot return -1 as specified in the

@@ -25,15 +25,17 @@ public class Contractor extends Employee {
 
 	@Override
 	public String toString() {
-		return "Contractor employee = " + getFirstName() + " " + getLastName() + " " + getAddress() + basePay;
+		return "Contractor employee = " + getFirstName() + " " + getLastName() + " " + getAddress() + " $"+basePay;
 	}
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		if(displaySSN == true) {
-			System.out.println(res + getSSN());
+		if (displaySSN == true) {
+			System.out.println(res + " and ssn is " + getSSN());
+		} else {
+			System.out.println(res);
 		}
-		System.out.println(res);
+
 	}
 
 	public Double computePay(int numHrs) {

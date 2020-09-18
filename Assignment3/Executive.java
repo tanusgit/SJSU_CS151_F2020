@@ -15,9 +15,11 @@ public class Executive extends Employee {
 		yearlyBonus = pay;
 		yearlyCompensation = bonus;
 	}
+
 	public Double getyearlyCompensation() {
 		return yearlyCompensation;
 	}
+
 	public Double getBonus() {
 		return yearlyBonus;
 	}
@@ -27,13 +29,18 @@ public class Executive extends Employee {
 	}
 
 	public String toString() {
-		return "Executive" + " = " + getFirstName() + " " + getLastName()
-		+ " " + getID()+ " " + getAddress() + " " + getBonus() + " " + getyearlyCompensation();
+		return "Executive" + " = " + getFirstName() + " " + getLastName() + " " + getID() + " " + getAddress() + " "
+				+ " $"+ getBonus() + " "+ " $" + getyearlyCompensation();
 	}
 
 	public void introduce(boolean displaySSN) {
 		String res = toString();
-		System.out.println(res);
+		if (displaySSN == true) {
+			System.out.println(res + " and ssn is " + getSSN());
+		} else {
+			System.out.println(res);
+		}
+
 	}
 
 	public Double computePay() {
