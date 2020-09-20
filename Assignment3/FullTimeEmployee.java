@@ -1,4 +1,4 @@
-package ass3;
+
 
 public abstract class FullTimeEmployee extends Employee {
 	private Double basePay;

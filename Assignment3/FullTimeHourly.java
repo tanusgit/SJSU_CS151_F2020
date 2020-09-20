@@ -1,4 +1,4 @@
-package ass3;
+
 
 public class FullTimeHourly extends FullTimeEmployee {
 	private Double overtimePay;

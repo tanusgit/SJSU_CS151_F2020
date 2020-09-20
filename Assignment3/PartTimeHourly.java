@@ -1,4 +1,4 @@
-package ass3;
+
 
 public class PartTimeHourly extends Employee {
 	private Double baseHourlyPay;

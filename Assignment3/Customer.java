@@ -1,4 +1,4 @@
-package ass3;
+
 
 public class Customer extends Person {
 	private int customerID;

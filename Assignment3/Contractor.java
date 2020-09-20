@@ -1,4 +1,4 @@
-package ass3;
+
 
 public class Contractor extends Employee {
 	private Double basePay;

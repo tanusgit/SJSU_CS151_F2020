@@ -1,4 +1,4 @@
-package ass3;
+
 
 public class Employee extends Person {
 	private int id;
