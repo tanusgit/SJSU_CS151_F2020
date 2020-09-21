@@ -1,13 +1,13 @@
 package ass4;
 
-public class Course {
+public class Course implements Cloneable{
 	private String courseName;
 	private String courseDescription;
 	private String department;
-	private int startTime;
+	private String startTime;
 	private String weekday;
 
-	public Course(String courseName, String courseDescription, String department, int startTime, String weekday) {
+	public Course(String courseName, String courseDescription, String department, String startTime, String weekday) {
 		super();
 		this.courseName = courseName;
 		this.courseDescription = courseDescription;
@@ -40,11 +40,11 @@ public class Course {
 		this.department = department;
 	}
 
-	public int getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(int startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
 
@@ -55,5 +55,17 @@ public class Course {
 	public void setWeekday(String weekday) {
 		this.weekday = weekday;
 	}
+	
+	protected Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
+
+	@Override
+	public String toString() {
+		return courseName + ", " + courseDescription + ", "
+				+ department + ", " + startTime + ", " + weekday ;
+	}
+	
 
 }
