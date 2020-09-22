@@ -6,9 +6,14 @@ public class Employee {
 	private int employeeId;
 	private int hourlyPay;
 
-	
-	
-	
+	public Employee(String firstname, String lastname, int employeeId, int hourlyPay) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.employeeId = employeeId;
+		this.hourlyPay = hourlyPay;
+	}
+
 	public String getFirstname() {
 		return firstname;
 	}
@@ -41,7 +46,12 @@ public class Employee {
 		this.hourlyPay = hourlyPay;
 	}
 
-	public double computePay(int hr) {
+	@Override
+	public String toString() {
+		return firstname + " " + lastname + ", " + employeeId + ", " + hourlyPay;
+	}
+
+	public double computePay(int hr) throws TooManyHoursWorkedException {
 		if (hr < 0) {
 			throw new NumberFormatException();
 		}
@@ -54,12 +64,9 @@ public class Employee {
 	}
 }
 
-class TooManyHoursWorkedException extends Exception { 
-	public TooManyHoursWorkedException(String s) {
-		s = "Number of hours cannot be more than 40";
+class TooManyHoursWorkedException extends Exception {
+	public TooManyHoursWorkedException() {
+		String s = "Number of hours cannot be more than 40";
 		System.out.println(s);
 	}
 }
-
-
-	
