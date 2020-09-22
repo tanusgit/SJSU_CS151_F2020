@@ -1,6 +1,6 @@
 package ass4;
 
-public class Course implements Cloneable{
+public class Course implements Cloneable {
 	private String courseName;
 	private String courseDescription;
 	private String department;
@@ -55,17 +55,14 @@ public class Course implements Cloneable{
 	public void setWeekday(String weekday) {
 		this.weekday = weekday;
 	}
-	
-	protected Object clone() throws CloneNotSupportedException
-    {
-        return super.clone();
-    }
+
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 
 	@Override
 	public String toString() {
-		return courseName + ", " + courseDescription + ", "
-				+ department + ", " + startTime + ", " + weekday ;
+		return courseName + ", " + courseDescription + ", " + department + ", " + startTime + ", " + weekday;
 	}
-	
 
 }

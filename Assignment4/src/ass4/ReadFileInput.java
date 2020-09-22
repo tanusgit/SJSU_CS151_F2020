@@ -7,9 +7,7 @@ import java.io.IOException;
 
 public class ReadFileInput {
 	public static void main(String[] args) {
-		File file = new File("/home/td/Desktop/SJSU/CS151/SJSU_CS151_F2020/Assignment4/src/ass4/quote2.txt");
-		// File file = new
-		// File("/home/td/Desktop/SJSU/CS151/SJSU_CS151_F2020/Assignment4/src/ass4/");
+		File file = new File("/home/td/Desktop/SJSU/CS151/SJSU_CS151_F2020/Assignment4/src/ass4/quote.txt");
 		FileReader r;
 		if (file.length() == 0) {
 			System.out.println("your file is empty");
