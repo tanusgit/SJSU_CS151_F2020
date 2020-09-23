@@ -1,4 +1,4 @@
-package ass4;
+
 
 public class Course implements Cloneable {
 	private String courseName;
