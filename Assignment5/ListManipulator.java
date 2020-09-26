@@ -8,6 +8,7 @@ public class ListManipulator {
 	// Make sure to account for cases with duplicate values. The method returns the
 	// sorted list.
 	ArrayList<Integer> sort(ArrayList<Integer> myLst, Boolean ascending) {
+		// using bubble sort to sort the elements
 		if (ascending == true) {
 			for (int i = 0; i < myLst.size() - 2; i++) {
 				for (int j = i + 1; j < myLst.size() - 1; j++) {
@@ -17,9 +18,8 @@ public class ListManipulator {
 						myLst.set(j, temp);
 					}
 				}
-			}	
-		}
-		else if (ascending == false) {
+			}
+		} else if (ascending == false) {
 			for (int i = 0; i < myLst.size() - 2; i++) {
 				for (int j = i + 1; j < myLst.size() - 1; j++) {
 					if (myLst.get(i) < myLst.get(j)) {
@@ -28,70 +28,119 @@ public class ListManipulator {
 						myLst.set(j, temp);
 					}
 				}
-			}		
+			}
 		}
 		return myLst;
 	}
-	
-	ArrayList<Integer> swapLargestSmallest(ArrayList<Integer> myLst){
+
+	ArrayList<Integer> swapLargestSmallest(ArrayList<Integer> myLst) {
 		int i;
 		Integer largest = 0;
 		Integer smallest = myLst.get(0);
-		Integer indexOflargest;
-		Integer indexOfsmallest;
-		
-		for (i = 0; i < myLst.size() - 1; i++) {
-			System.out.println( i);
+		Integer indexOflargest = 0;
+		Integer indexOfsmallest = 0;
+
+		ArrayList<Integer> big = new ArrayList<>();
+		ArrayList<Integer> small = new ArrayList<>();
+		for (i = 0; i < myLst.size(); i++) {
 			if (myLst.get(i) > largest) {
 				largest = myLst.get(i);
-				System.out.println(" just before index" + i + " largest" + largest + " "
-						+ myLst.get(i));
-			
+
 			}
 		}
-		
+		// finding how many largest nums are there and saving their index pos
+		for (i = 0; i < myLst.size(); i++) {
+			if (myLst.get(i) == largest) {
+				big.add(i);
+			}
+
+			if (myLst.get(i) < smallest) {
+				smallest = myLst.get(i);
+
+			}
+		}
+		System.out.println("printing position of largest" + big);
+
+		// finding how many smallest nums are there and saving their index pos
+		for (i = 0; i < myLst.size(); i++) {
+			if (myLst.get(i) == smallest) {
+				small.add(i);
+			}
+		}
+		System.out.println("printing position of smallest" + small);
+
+		// no need to check which smallest or largest value is in the first index as the
+		// arraylist is a sorted
+		// list so we will always have the first occurring value in the first index
+		// storing the first index of smallest and largest value to variables
+
+		int largeFirstindex = big.get(0);
+		int smallFirstindex = small.get(0);
+
+		System.out.println("largest = " + largest + " smallest " + smallest + " small index = " + indexOfsmallest
+				+ " index of big = " + indexOflargest);
+
+		myLst.set(smallFirstindex, largest);
+		myLst.set(largeFirstindex, smallest);
+
 		return myLst;
-		
+
 	}
 	
-	public static int[] swap(int[] array) {
-	    int minIndex = 0, maxIndex = 0;
-	    for (int i = 1; i < array.length; ++i) {
-	        if (array[i] < array[minIndex])
-	            minIndex = i;
-	        if (array[i] > array[maxIndex])
-	            maxIndex = i;
-	    }
-	    int t;
-	    if (maxIndex != minIndex) {
-	        t = array[minIndex];
-	        array[minIndex] = array[maxIndex];
-	        array[maxIndex] = t;
-	    }
-	    return array;
+	void table(ArrayList<Integer> myLst) {
+		
 	}
 
 	public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<>();
 		ArrayList<Integer> result = new ArrayList<>();
-		array.add(5);
+		array.add(1);
 		array.add(6);
 		array.add(7);
-		array.add(3);
+		array.add(9);
 		array.add(2);
 		array.add(1);
 		array.add(8);
 		array.add(9);
+
 		ListManipulator m = new ListManipulator();
-		result = m.sort(array, false);
+
+		result = m.swapLargestSmallest(array);
 		System.out.println(result);
-		//m.swapLargestSmallest(array);
-		int arr[] = {1, 5, 4, 6, 8};
-		int a[] = swap(arr);
-		for(int l : a) {
-			System.out.println(l);
-		}
-		
-		
+
 	}
+
+}
+
+class Keep {
+	private int indexpos;
+	private int value;
+
+	public Keep(int indexpos, int value) {
+		super();
+		this.indexpos = indexpos;
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return "keep [indexpos=" + indexpos + ", value=" + value + "]";
+	}
+
+	public int getIndexpos() {
+		return indexpos;
+	}
+
+	public void setIndexpos(int indexpos) {
+		this.indexpos = indexpos;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
 }
