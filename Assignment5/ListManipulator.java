@@ -59,7 +59,7 @@ public class ListManipulator {
 
 			}
 		}
-		System.out.println("printing position of largest" + big);
+		// System.out.println("printing position of largest" + big);
 
 		// finding how many smallest nums are there and saving their index pos
 		for (i = 0; i < myLst.size(); i++) {
@@ -67,7 +67,7 @@ public class ListManipulator {
 				small.add(i);
 			}
 		}
-		System.out.println("printing position of smallest" + small);
+		// System.out.println("printing position of smallest" + small);
 
 		// no need to check which smallest or largest value is in the first index as the
 		// arraylist is a sorted
@@ -77,8 +77,9 @@ public class ListManipulator {
 		int largeFirstindex = big.get(0);
 		int smallFirstindex = small.get(0);
 
-		System.out.println("largest = " + largest + " smallest " + smallest + " small index = " + indexOfsmallest
-				+ " index of big = " + indexOflargest);
+		// System.out.println("largest = " + largest + " smallest " + smallest + " small
+		// index = " + indexOfsmallest
+		// + " index of big = " + indexOflargest);
 
 		myLst.set(smallFirstindex, largest);
 		myLst.set(largeFirstindex, smallest);
@@ -86,9 +87,18 @@ public class ListManipulator {
 		return myLst;
 
 	}
-	
-	void table(ArrayList<Integer> myLst) {
-		
+
+	public void table(ArrayList<Integer> myLst) {
+		ArrayList<Integer> list = new ArrayList<>();
+		// setting every elements in list to 0 to match the length of myLst
+		for (int j = 0; j < myLst.size() - 1; j++) {
+			if (myLst.get(j) != myLst.get(j + 1)) {
+				myLst.set(j, myLst.get(j));
+			}
+
+		}
+		System.out.println("printing unique list" + myLst);
+
 	}
 
 	public static void main(String[] args) {
@@ -104,36 +114,18 @@ public class ListManipulator {
 		array.add(9);
 
 		ListManipulator m = new ListManipulator();
+		m.table(array);
 
 		result = m.swapLargestSmallest(array);
-		System.out.println(result);
+		// System.out.println(result);
 
 	}
 
 }
 
-class Keep {
-	private int indexpos;
+class Pair {
 	private int value;
-
-	public Keep(int indexpos, int value) {
-		super();
-		this.indexpos = indexpos;
-		this.value = value;
-	}
-
-	@Override
-	public String toString() {
-		return "keep [indexpos=" + indexpos + ", value=" + value + "]";
-	}
-
-	public int getIndexpos() {
-		return indexpos;
-	}
-
-	public void setIndexpos(int indexpos) {
-		this.indexpos = indexpos;
-	}
+	private int NumOftimes;
 
 	public int getValue() {
 		return value;
@@ -141,6 +133,25 @@ class Keep {
 
 	public void setValue(int value) {
 		this.value = value;
+	}
+
+	public int getNumOftimes() {
+		return NumOftimes;
+	}
+
+	public void setNumOftimes(int numOftimes) {
+		NumOftimes = numOftimes;
+	}
+
+	public Pair(int value, int numOftimes) {
+		super();
+		this.value = value;
+		NumOftimes = numOftimes;
+	}
+
+	@Override
+	public String toString() {
+		return "Keep [value=" + value + ", NumOftimes=" + NumOftimes + "]";
 	}
 
 }
