@@ -90,14 +90,14 @@ public class ListManipulator {
 
 	public void table(ArrayList<Integer> myLst) {
 		ArrayList<Integer> list = new ArrayList<>();
-		// setting every elements in list to 0 to match the length of myLst
-		for (int j = 0; j < myLst.size() - 1; j++) {
-			if (myLst.get(j) != myLst.get(j + 1)) {
-				myLst.set(j, myLst.get(j));
+		// adding unique elements to list
+		for (int m = 0; m < myLst.size(); m++) {
+			if (!list.contains((Object)myLst.get(m))){
+				list.add(myLst.get(m));
 			}
 
 		}
-		System.out.println("printing unique list" + myLst);
+		System.out.println("printing unique list = " + list);
 
 	}
 
