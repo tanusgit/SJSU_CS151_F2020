@@ -1,6 +1,6 @@
 package a5;
 
-public class Course {
+public class Course  implements Comparable<Course>{
 	private String courseName;
 	private String courseDescription;
 	private String department;
@@ -60,6 +60,11 @@ public class Course {
 	@Override
 	public String toString() {
 		return courseName + ", " + courseDescription + ", " + department + ", " + startTime + ", " + weekday;
+	}
+
+	@Override
+	public int compareTo(Course c) {
+		return (this.courseName.compareTo(c.courseName));
 	}
 
 }

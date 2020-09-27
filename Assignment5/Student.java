@@ -29,6 +29,7 @@ public class Student implements Cloneable {
 		}
 		if (ascending == false) {
 			 Collections.sort(courses);
+			 Collections.reverse(courses);
 		}
 		System.out.println(courses);
 	}
