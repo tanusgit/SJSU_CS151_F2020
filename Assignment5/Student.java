@@ -1,5 +1,6 @@
 package a5;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Student implements Cloneable {
@@ -13,14 +14,23 @@ public class Student implements Cloneable {
 	private String major;
 	private String department;
 	LinkedList<Course> courses = new LinkedList();
+
 	public void addCourse(Course A) {
 		courses.add(A);
 	}
+
 	public void removeCourse(Course A) {
 		courses.remove(A);
 	}
+
 	public void sortCourses(boolean ascending) {
-		
+		if (ascending == true) {
+			 Collections.sort(courses);
+		}
+		if (ascending == false) {
+			 Collections.sort(courses);
+		}
+		System.out.println(courses);
 	}
 
 	public String getFirstname() {
@@ -71,16 +81,8 @@ public class Student implements Cloneable {
 		this.department = department;
 	}
 
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-
 	public Student(String firstname, String lastname, int age, double gpa, String major, String department,
-			Course course) {
+			LinkedList<Course> course) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -88,17 +90,16 @@ public class Student implements Cloneable {
 		this.gpa = gpa;
 		this.major = major;
 		this.department = department;
-		this.course = course;
+		courses = course;
 	}
 
 	public void printInfo() {
-		System.out.println(firstname + " " + lastname + ", " + age + " year old, " + gpa
-				+ " gpa, " + major + " major, " + department + " department, " + course);
+		System.out.println(firstname + " " + lastname + ", " + age + " year old, " + gpa + " gpa, " + major + " major, "
+				+ department + " department, " + courses);
 	}
-	
-	protected Object clone() throws CloneNotSupportedException
-    {
-        return super.clone();
-    }
+
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 
 }
