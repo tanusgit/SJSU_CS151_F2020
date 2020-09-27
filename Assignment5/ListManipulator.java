@@ -92,7 +92,7 @@ public class ListManipulator {
 		ArrayList<Integer> list = new ArrayList<>();
 		// adding unique elements to list
 		for (int m = 0; m < myLst.size(); m++) {
-			if (!list.contains((Object)myLst.get(m))){
+			if (!list.contains((Object) myLst.get(m))) {
 				list.add(myLst.get(m));
 			}
 

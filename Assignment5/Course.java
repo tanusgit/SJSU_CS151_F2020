@@ -1,6 +1,6 @@
 package a5;
 
-public class Course  implements Comparable<Course>{
+public class Course implements Comparable<Course> {
 	private String courseName;
 	private String courseDescription;
 	private String department;
@@ -55,7 +55,6 @@ public class Course  implements Comparable<Course>{
 	public void setWeekday(String weekday) {
 		this.weekday = weekday;
 	}
-
 
 	@Override
 	public String toString() {

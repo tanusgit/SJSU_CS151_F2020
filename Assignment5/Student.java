@@ -25,11 +25,11 @@ public class Student implements Cloneable {
 
 	public void sortCourses(boolean ascending) {
 		if (ascending == true) {
-			 Collections.sort(courses);
+			Collections.sort(courses);
 		}
 		if (ascending == false) {
-			 Collections.sort(courses);
-			 Collections.reverse(courses);
+			Collections.sort(courses);
+			Collections.reverse(courses);
 		}
 		System.out.println(courses);
 	}
