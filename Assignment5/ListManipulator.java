@@ -98,10 +98,12 @@ public class ListManipulator {
 
 		}
 		System.out.println("printing unique list = " + list);
+		sort(list, true);
+		System.out.println("printing unique list after sorting = " + list);
 
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<>();
 		ArrayList<Integer> result = new ArrayList<>();
 		array.add(1);
@@ -121,7 +123,7 @@ public class ListManipulator {
 
 	}
 
-}
+}*/
 
 class Pair {
 	private int value;
