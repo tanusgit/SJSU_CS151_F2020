@@ -104,6 +104,7 @@ public class ListManipulator {
 
 	}
 
+	// it is a helper function for table()
 	public void NumTimes(ArrayList<Integer> myLst) {
 		ArrayList<Pair> list = new ArrayList<>();
 		int count = 0;
@@ -111,12 +112,12 @@ public class ListManipulator {
 			for (int m = 0; m < myLst.size(); m++) {
 				if ((myLst.get(i)).equals(myLst.get(m))) {
 					count++;
-				}	
+				}
 			}
 			Pair p = new Pair(myLst.get(i), count);
 			list.add(p);
 			count = 0;
-			
+
 		}
 		System.out.println("printing nums of elements" + list);
 	}
@@ -144,6 +145,7 @@ public class ListManipulator {
 
 }
 
+//it is a helper class for above methods
 class Pair {
 	private int value;
 	private int NumOftimes;
