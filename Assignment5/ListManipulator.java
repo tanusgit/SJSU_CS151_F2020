@@ -1,6 +1,7 @@
 package a5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ListManipulator {
 	// Accepts an array list of integers and sorts it in ascending or descending
@@ -89,21 +90,38 @@ public class ListManipulator {
 	}
 
 	public void table(ArrayList<Integer> myLst) {
+		NumTimes(myLst);
 		ArrayList<Integer> list = new ArrayList<>();
 		// adding unique elements to list
 		for (int m = 0; m < myLst.size(); m++) {
 			if (!list.contains((Object) myLst.get(m))) {
 				list.add(myLst.get(m));
 			}
-
 		}
 		System.out.println("printing unique list = " + list);
-		sort(list, true);
+		Collections.sort(list);
 		System.out.println("printing unique list after sorting = " + list);
 
 	}
 
-	/*public static void main(String[] args) {
+	public void NumTimes(ArrayList<Integer> myLst) {
+		ArrayList<Pair> list = new ArrayList<>();
+		int count = 0;
+		for (int i = 0; i < myLst.size(); i++) {
+			for (int m = 0; m < myLst.size(); m++) {
+				if ((myLst.get(i)).equals(myLst.get(m))) {
+					count++;
+				}	
+			}
+			Pair p = new Pair(myLst.get(i), count);
+			list.add(p);
+			count = 0;
+			
+		}
+		System.out.println("printing nums of elements" + list);
+	}
+
+	public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<>();
 		ArrayList<Integer> result = new ArrayList<>();
 		array.add(1);
@@ -117,13 +135,14 @@ public class ListManipulator {
 
 		ListManipulator m = new ListManipulator();
 		m.table(array);
+		m.NumTimes(array);
 
 		result = m.swapLargestSmallest(array);
 		// System.out.println(result);
 
 	}
 
-}*/
+}
 
 class Pair {
 	private int value;
@@ -153,7 +172,7 @@ class Pair {
 
 	@Override
 	public String toString() {
-		return "Keep [value=" + value + ", NumOftimes=" + NumOftimes + "]";
+		return "value=" + value + " NumOftimes= " + NumOftimes + " ";
 	}
 
 }
