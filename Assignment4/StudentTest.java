@@ -34,6 +34,9 @@ public class StudentTest {
         
         
 		s.printInfo();
+		System.out.println(" ");
+		System.out.println("-------------------------------");
+		System.out.println(" ");
 		s2.printInfo();
 	}
 }
