@@ -1,4 +1,4 @@
-package a5;
+
 
 public class Course implements Comparable<Course> {
 	private String courseName;
