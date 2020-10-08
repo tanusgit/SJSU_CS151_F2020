@@ -1,10 +1,14 @@
 package a6;
 
-public abstract class Shape {
+public class Triangle extends Shape {
 	private double  length;
 	private double  width;
 
-	public abstract double computeArea();
+	public Triangle(double  length, double  width) {
+		super();
+		this.length = length;
+		this.width = width;
+	}
 
 	public double  getLength() {
 		return length;
@@ -23,8 +27,15 @@ public abstract class Shape {
 	}
 
 	@Override
+	public double computeArea() {
+		double res = 1/2 * length * width;
+		return res;
+
+	}
+
+	@Override
 	public String toString() {
-		return "Shape [length=" + length + ", width=" + width + "]";
+		return "Triangle [length=" + length + ", width=" + width + "]";
 	}
 
 }
