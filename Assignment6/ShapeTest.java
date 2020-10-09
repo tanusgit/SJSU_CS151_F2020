@@ -29,14 +29,15 @@ public class ShapeTest {
 		Shapes s = new Shapes(shapes);
 		s.compute();
 		System.out.println("-----------------------");
-		
+		//max() return the shape with the maximum area
 		Shape m = s.max();
-		System.out.println(m.computeArea());
+		System.out.println("maximum area = " + m.computeArea());
 		System.out.println(m.toString());
 		
-		
-		double m2 = s.min();
-		
+		//min() return the shape with the minimum area
+		Shape m2 = s.min();
+		System.out.println("minimum area = " + m2.computeArea());
+		System.out.println(m2.toString());
 
 	}
 }

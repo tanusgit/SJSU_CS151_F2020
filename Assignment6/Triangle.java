@@ -28,8 +28,10 @@ public class Triangle extends Shape {
 
 	@Override
 	public double computeArea() {
-		double res = 1/2 * length * width;
+		double res = (.5)* length * width;
+		//System.out.println("area triangle  " + res + " " + length + " "+ width);
 		return res;
+		
 
 	}
 

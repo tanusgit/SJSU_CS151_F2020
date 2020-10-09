@@ -35,7 +35,7 @@ public class Shapes {
 	public void compute() {
 		for (Shape s : shapeList) {
 			double res = s.computeArea();
-			System.out.println(res);
+			System.out.println(s.toString() + " " + res);
 		}
 	}
 
@@ -56,16 +56,22 @@ public class Shapes {
 		return p;
 	}
 
-	public double min() {
+	public Shape min() {
 		double firstArea = shapeList.get(0).computeArea();
 		double min = firstArea;
+		Shape p = null;
 		for (Shape s : shapeList) {
 			double res = s.computeArea();
 			if(min > res) {
 				min = res;
+				try {
+					p = (Shape)s.clone();
+				} catch (CloneNotSupportedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-		return min;
+		return p;
 	}
 
 }
