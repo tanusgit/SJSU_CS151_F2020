@@ -28,6 +28,15 @@ public class ShapeTest {
 
 		Shapes s = new Shapes(shapes);
 		s.compute();
+		System.out.println("-----------------------");
+		
+		Shape m = s.max();
+		System.out.println(m.computeArea());
+		System.out.println(m.toString());
+		
+		
+		double m2 = s.min();
+		
 
 	}
 }

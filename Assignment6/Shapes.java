@@ -39,4 +39,33 @@ public class Shapes {
 		}
 	}
 
+	public Shape max() {
+		double max = 0.0;
+		Shape p = null;
+		for (Shape s : shapeList) {	
+			double res = s.computeArea();
+			if(res > max ) {
+				max = res;
+				try {
+					p = (Shape)s.clone();
+				} catch (CloneNotSupportedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return p;
+	}
+
+	public double min() {
+		double firstArea = shapeList.get(0).computeArea();
+		double min = firstArea;
+		for (Shape s : shapeList) {
+			double res = s.computeArea();
+			if(min > res) {
+				min = res;
+			}
+		}
+		return min;
+	}
+
 }
