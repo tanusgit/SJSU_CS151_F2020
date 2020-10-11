@@ -27,7 +27,18 @@ public class ShapeTest {
 		shapes.add(h1);
 
 		Shapes s = new Shapes(shapes);
-		s.compute();
+		//s.compute();
+		
+		for (int i=0; i<4; i++) 
+        { 
+			System.out.println("inside loop -- ");
+            Thread object = new Thread(new Shapes(shapes)); 
+           // s.compute();
+            object.start(); 
+            
+        } 
+		
+		
 		System.out.println("-----------------------");
 		//max() return the shape with the maximum area
 		Shape m = s.max();
