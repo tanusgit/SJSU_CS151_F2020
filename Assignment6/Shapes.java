@@ -8,27 +8,27 @@ This class should also implement a getter and a setter for shapeList.
 Implement a synchronized public method called compute() in which you iterate 
 through the members of shapeList and make a call to compute the shape’s area 
 and print the result to command line output. */
-public class Shapes implements Runnable{
-	private ArrayList<Shape> shapeList = new ArrayList<>();
+public class Shapes<T> implements Runnable{
+	private ArrayList<T> shapeList = new ArrayList<>();
 
-	public ArrayList<Shape> getShapeList() {
-		return shapeList;
+	public  < T extends Shape > ArrayList<T> getShapeList() {
+		return (ArrayList<T>) shapeList;
 	}
 
-	public void setShapeList(ArrayList<Shape> shapeList) {
+	public void setShapeList(ArrayList<T> shapeList) {
 		this.shapeList = shapeList;
 	}
 
-	public Shapes(ArrayList<Shape> shapeList) {
+	public Shapes(ArrayList<T> shapeList) {
 		super();
 		this.shapeList = shapeList;
 	}
 
-	public void add(Shape s) {
+	public void add(T s) {
 		shapeList.add(s);
 	}
 
-	public void remove(Shape s) {
+	public void remove(T s) {
 		shapeList.remove(s);
 	}
 	
