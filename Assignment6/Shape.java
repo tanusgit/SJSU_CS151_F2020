@@ -1,10 +1,18 @@
 package a6;
 
-public abstract class Shape implements Cloneable {
+import java.io.Serializable;
+
+public class Shape implements Cloneable, Serializable {
 	private double length;
 	private double width;
+	
+	public Shape() {
+		
+	}
 
-	public abstract double computeArea();
+	public double computeArea() {
+		return 0.0;
+	}
 
 	public double getLength() {
 		return length;

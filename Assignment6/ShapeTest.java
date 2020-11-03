@@ -1,5 +1,10 @@
 package a6;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ShapeTest {
@@ -27,28 +32,71 @@ public class ShapeTest {
 		shapes.add(h1);
 
 		Shapes s = new Shapes(shapes);
-		//s.compute();
-		
-		for (int i=0; i<4; i++) 
-        { 
+		// s.compute();
+		System.out.println("printing the length of shapes " + shapes.size());
+		for (int i = 0; i < shapes.size(); i++) {
+			try {
+				FileOutputStream sout = new FileOutputStream("./obj" + (i + 1) + ".txt");
+				ObjectOutputStream oOut = new ObjectOutputStream(sout);
+				oOut.writeObject(shapes.get(i));
+				oOut.close();
+				sout.close();
+
+			} catch (IOException e) {
+				System.out.println(e);
+			}
+		}
+
+		Shape shapes2 = new Shape();
+		for (int i = 0; i < shapes.size(); i++) {
+			// Deserialization
+			try {
+
+				// Reading the object from a file
+				FileInputStream sout = new FileInputStream("./obj" + (i + 1) + ".txt");
+				ObjectInputStream oOut = new ObjectInputStream(sout);
+
+				// Method for deserialization of object
+				shapes2 = (Shape) oOut.readObject();
+				oOut.close();
+				sout.close();
+				System.out.println("Object has been deserialized\n" + "Data after Deserialization.");
+				System.out.println(shapes2);
+
+				// System.out.println("z = " + object1.z);
+			}
+
+			catch (IOException ex) {
+				System.out.println("IOException is caught");
+			}
+
+			catch (ClassNotFoundException ex) {
+				System.out.println("ClassNotFoundException" + " is caught");
+			}
+
+		}
+
+		for (int i = 0; i < 4; i++) {
 			System.out.println("inside loop -- ");
-            Thread object = new Thread(new Shapes(shapes)); 
-           // s.compute();
-            object.start(); 
-            
-        } 
-		
-		
+			Thread object = new Thread(new Shapes(shapes));
+			// s.compute();
+			object.start();
+
+		}
+
 		System.out.println("-----------------------");
-		//max() return the shape with the maximum area
+		// max() return the shape with the maximum area
 		Shape m = s.max();
-		System.out.println("maximum area = " + m.computeArea());
+		System.out.println("------------------------------------------");
+		System.out.println("printing maximum area = " + m.computeArea());
 		System.out.println(m.toString());
-		
-		//min() return the shape with the minimum area
+		System.out.println("------------------------------------------");
+		// min() return the shape with the minimum area
 		Shape m2 = s.min();
-		System.out.println("minimum area = " + m2.computeArea());
+		System.out.println("-------------------------------------------");
+		System.out.println("printing minimum area = " + m2.computeArea());
 		System.out.println(m2.toString());
+		System.out.println("-------------------------------------------");
 
 	}
 }
