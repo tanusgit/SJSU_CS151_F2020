@@ -1,4 +1,4 @@
-package a6;
+
 
 public class Hexagon extends Shape {
 	private double side;
