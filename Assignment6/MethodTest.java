@@ -1,4 +1,3 @@
-package a6;
 
 import java.util.ArrayList;
 
