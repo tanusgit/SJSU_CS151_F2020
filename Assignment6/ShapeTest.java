@@ -1,4 +1,4 @@
-
+package a6;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,7 +33,7 @@ public class ShapeTest {
 
 		Shapes s = new Shapes(shapes);
 		// s.compute();
-		System.out.println("printing the length of shapes " + shapes.size());
+		//System.out.println("printing the length of shapes " + shapes.size());
 		for (int i = 0; i < shapes.size(); i++) {
 			try {
 				FileOutputStream sout = new FileOutputStream("./obj" + (i + 1) + ".txt");
@@ -47,7 +47,7 @@ public class ShapeTest {
 			}
 		}
 
-		Shape shapes2 = new Shape();
+	/*	Shape shapes2 = new Shape();
 		for (int i = 0; i < shapes.size(); i++) {
 			// Deserialization
 			try {
@@ -74,28 +74,41 @@ public class ShapeTest {
 				System.out.println("ClassNotFoundException" + " is caught");
 			}
 
-		}
+		}*/
 
-		for (int i = 0; i < 4; i++) {
+		/*for (int i = 0; i < 4; i++) {
 			System.out.println("inside loop -- ");
 			Thread object = new Thread(new Shapes(shapes));
 			// s.compute();
 			object.start();
 
-		}
+		}*/
+		new Thread(){
+			public void run() {
+				s.compute();
+			}
+		}.start();
+		
+		new Thread(){
+			public void run() {
+				s.compute();
+			}
+		}.start();
 
 		System.out.println("-----------------------");
 		// max() return the shape with the maximum area
 		Shape m = s.max();
 		System.out.println("------------------------------------------");
 		System.out.println("printing maximum area = " + m.computeArea());
-		System.out.println(m.toString());
+		System.out.println("printing the attributes of the shape having"
+				+ " maximum area = " + m.toString());
 		System.out.println("------------------------------------------");
 		// min() return the shape with the minimum area
 		Shape m2 = s.min();
 		System.out.println("-------------------------------------------");
 		System.out.println("printing minimum area = " + m2.computeArea());
-		System.out.println(m2.toString());
+		System.out.println("printing the attributes of the shape having"
+				+ " minimum area = " + m2.toString());
 		System.out.println("-------------------------------------------");
 
 	}

@@ -1,4 +1,4 @@
-
+package a6;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ This class should also implement a getter and a setter for shapeList.
 Implement a synchronized public method called compute() in which you iterate 
 through the members of shapeList and make a call to compute the shape’s area 
 and print the result to command line output. */
-public class Shapes<T> implements Runnable, Serializable {
+public class Shapes<T> implements Serializable {
 	private ArrayList<T> shapeList = new ArrayList<>();
 
 	public <T extends Shape> ArrayList<T> getShapeList() {
@@ -33,7 +33,7 @@ public class Shapes<T> implements Runnable, Serializable {
 		shapeList.remove(s);
 	}
 
-	public void run() {
+	/*public void run() {
 		try {
 			// Displaying the thread that is running
 			System.out.println("Thread " + Thread.currentThread().getId() + " is running");
@@ -46,9 +46,9 @@ public class Shapes<T> implements Runnable, Serializable {
 			// Throwing an exception
 			System.out.println("Exception is caught");
 		}
-	}
+	}*/
 
-	public void compute() {
+	synchronized public void compute() {
 		for (T s : shapeList) {
 			Shape s1 = (Shape) s;
 			double res = s1.computeArea();
