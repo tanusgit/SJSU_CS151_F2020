@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class ShapeTest {
+public class ShapeTest extends Thread {
 	public static void main(String[] args) {
 		Circle c = new Circle(2.3);
 		Circle c1 = new Circle(2.5);
@@ -33,7 +33,7 @@ public class ShapeTest {
 
 		Shapes s = new Shapes(shapes);
 		// s.compute();
-		//System.out.println("printing the length of shapes " + shapes.size());
+		// System.out.println("printing the length of shapes " + shapes.size());
 		for (int i = 0; i < shapes.size(); i++) {
 			try {
 				FileOutputStream sout = new FileOutputStream("./obj" + (i + 1) + ".txt");
@@ -47,49 +47,42 @@ public class ShapeTest {
 			}
 		}
 
-	/*	Shape shapes2 = new Shape();
-		for (int i = 0; i < shapes.size(); i++) {
-			// Deserialization
-			try {
+		/*
+		 * Shape shapes2 = new Shape(); for (int i = 0; i < shapes.size(); i++) { //
+		 * Deserialization try {
+		 * 
+		 * // Reading the object from a file FileInputStream sout = new
+		 * FileInputStream("./obj" + (i + 1) + ".txt"); ObjectInputStream oOut = new
+		 * ObjectInputStream(sout);
+		 * 
+		 * // Method for deserialization of object shapes2 = (Shape) oOut.readObject();
+		 * oOut.close(); sout.close();
+		 * System.out.println("Object has been deserialized\n" +
+		 * "Data after Deserialization."); System.out.println(shapes2);
+		 * 
+		 * // System.out.println("z = " + object1.z); }
+		 * 
+		 * catch (IOException ex) { System.out.println("IOException is caught"); }
+		 * 
+		 * catch (ClassNotFoundException ex) {
+		 * System.out.println("ClassNotFoundException" + " is caught"); }
+		 * 
+		 * }
+		 */
 
-				// Reading the object from a file
-				FileInputStream sout = new FileInputStream("./obj" + (i + 1) + ".txt");
-				ObjectInputStream oOut = new ObjectInputStream(sout);
-
-				// Method for deserialization of object
-				shapes2 = (Shape) oOut.readObject();
-				oOut.close();
-				sout.close();
-				System.out.println("Object has been deserialized\n" + "Data after Deserialization.");
-				System.out.println(shapes2);
-
-				// System.out.println("z = " + object1.z);
-			}
-
-			catch (IOException ex) {
-				System.out.println("IOException is caught");
-			}
-
-			catch (ClassNotFoundException ex) {
-				System.out.println("ClassNotFoundException" + " is caught");
-			}
-
-		}*/
-
-		/*for (int i = 0; i < 4; i++) {
-			System.out.println("inside loop -- ");
-			Thread object = new Thread(new Shapes(shapes));
-			// s.compute();
-			object.start();
-
-		}*/
-		new Thread(){
+		/*
+		 * for (int i = 0; i < 4; i++) { System.out.println("inside loop -- "); Thread
+		 * object = new Thread(new Shapes(shapes)); // s.compute(); object.start();
+		 * 
+		 * }
+		 */
+		new Thread() {
 			public void run() {
 				s.compute();
 			}
 		}.start();
-		
-		new Thread(){
+
+		new Thread() {
 			public void run() {
 				s.compute();
 			}
@@ -100,15 +93,13 @@ public class ShapeTest {
 		Shape m = s.max();
 		System.out.println("------------------------------------------");
 		System.out.println("printing maximum area = " + m.computeArea());
-		System.out.println("printing the attributes of the shape having"
-				+ " maximum area = " + m.toString());
+		System.out.println("printing the attributes of the shape having" + " maximum area = " + m.toString());
 		System.out.println("------------------------------------------");
 		// min() return the shape with the minimum area
 		Shape m2 = s.min();
 		System.out.println("-------------------------------------------");
 		System.out.println("printing minimum area = " + m2.computeArea());
-		System.out.println("printing the attributes of the shape having"
-				+ " minimum area = " + m2.toString());
+		System.out.println("printing the attributes of the shape having" + " minimum area = " + m2.toString());
 		System.out.println("-------------------------------------------");
 
 	}
