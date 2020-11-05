@@ -1,4 +1,3 @@
-package a6;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -79,16 +78,42 @@ public class ShapeTest extends Thread {
 		new Thread() {
 			public void run() {
 				s.compute();
+				System.out.println("-----------------------");
+				// max() return the shape with the maximum area
+				Shape m = s.max();
+				System.out.println("------------------------------------------");
+				System.out.println("printing maximum area = " + m.computeArea());
+				System.out.println("printing the attributes of the shape having" + " maximum area = " + m.toString());
+				System.out.println("------------------------------------------");
+				// min() return the shape with the minimum area
+				Shape m2 = s.min();
+				System.out.println("-------------------------------------------");
+				System.out.println("printing minimum area = " + m2.computeArea());
+				System.out.println("printing the attributes of the shape having" + " minimum area = " + m2.toString());
+				System.out.println("-------------------------------------------");
 			}
 		}.start();
 
 		new Thread() {
 			public void run() {
 				s.compute();
+				System.out.println("-----------------------");
+				// max() return the shape with the maximum area
+				Shape m = s.max();
+				System.out.println("------------------------------------------");
+				System.out.println("printing maximum area = " + m.computeArea());
+				System.out.println("printing the attributes of the shape having" + " maximum area = " + m.toString());
+				System.out.println("------------------------------------------");
+				// min() return the shape with the minimum area
+				Shape m2 = s.min();
+				System.out.println("-------------------------------------------");
+				System.out.println("printing minimum area = " + m2.computeArea());
+				System.out.println("printing the attributes of the shape having" + " minimum area = " + m2.toString());
+				System.out.println("-------------------------------------------");
 			}
 		}.start();
 
-		System.out.println("-----------------------");
+		/*System.out.println("-----------------------");
 		// max() return the shape with the maximum area
 		Shape m = s.max();
 		System.out.println("------------------------------------------");
@@ -100,7 +125,7 @@ public class ShapeTest extends Thread {
 		System.out.println("-------------------------------------------");
 		System.out.println("printing minimum area = " + m2.computeArea());
 		System.out.println("printing the attributes of the shape having" + " minimum area = " + m2.toString());
-		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");*/
 
 	}
 }
