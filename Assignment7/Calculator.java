@@ -1,5 +1,12 @@
-
-
+package sample;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +27,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.event.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 
-public class Main extends Application {
+public class Calculator extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -42,6 +51,11 @@ public class Main extends Application {
         gri.setHgap(10);
         gri.setVgap(10);
 
+        javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResource("image.png").toExternalForm());
+        ImageView iv = new ImageView(image);
+        iv.setFitWidth(30);
+        iv.setFitHeight(20);
+       
 
         Button b0 = new Button("0");
         Button b1 = new Button("1");
@@ -60,6 +74,8 @@ public class Main extends Application {
         Button b13 = new Button("*");
         Button b14 = new Button("/");
         Button b15 = new Button("=");
+
+        b0.setGraphic(iv);
 
         gri.add(b0, 0, 0, 1, 1);
         gri.add(b1, 1, 0, 1, 1);
