@@ -1,38 +1,13 @@
 package sample;
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.application.Application;
-import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.event.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
-import java.awt.*;
-import java.util.ArrayList;
-
 
 public class Calculator extends Application {
 
@@ -43,6 +18,8 @@ public class Calculator extends Application {
 
         GridPane p = new GridPane();
         TextField outputfield = new TextField("0");
+        outputfield.setPrefWidth(380);
+        outputfield.setPrefHeight(50);
         p.add(outputfield, 0, 0, 1, 1);
         p.setHgap(10);
         p.setVgap(10);
@@ -51,12 +28,100 @@ public class Calculator extends Application {
         gri.setHgap(10);
         gri.setVgap(10);
 
-        javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResource("image.png").toExternalForm());
-        ImageView iv = new ImageView(image);
-        iv.setFitWidth(30);
-        iv.setFitHeight(20);
-       
 
+
+
+        //for image 1
+        javafx.scene.image.Image image1 = new javafx.scene.image.Image(getClass().getResource("one.jpg").toExternalForm());
+        ImageView iv1 = new ImageView(image1);
+        iv1.setFitWidth(50);
+        iv1.setFitHeight(40);
+        //for image 2
+        javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResource("two.jpg").toExternalForm());
+        ImageView iv = new ImageView(image);
+        iv.setFitWidth(50);
+        iv.setFitHeight(40);
+
+        //for image 3
+        javafx.scene.image.Image image3 = new javafx.scene.image.Image(getClass().getResource("three.jpg").toExternalForm());
+        ImageView iv3 = new ImageView(image3);
+        iv3.setFitWidth(50);
+        iv3.setFitHeight(40);
+        //for image 4
+        javafx.scene.image.Image image4 = new javafx.scene.image.Image(getClass().getResource("four.jpg").toExternalForm());
+        ImageView iv4 = new ImageView(image4);
+        iv4.setFitWidth(50);
+        iv4.setFitHeight(40);
+        //for image 5
+        javafx.scene.image.Image image5 = new javafx.scene.image.Image(getClass().getResource("five.jpg").toExternalForm());
+        ImageView iv5 = new ImageView(image5);
+        iv5.setFitWidth(50);
+        iv5.setFitHeight(40);
+        //for image 6
+        javafx.scene.image.Image image6 = new javafx.scene.image.Image(getClass().getResource("six.jpg").toExternalForm());
+        ImageView iv6 = new ImageView(image6);
+        iv6.setFitWidth(50);
+        iv6.setFitHeight(40);
+
+        //for image 7
+        javafx.scene.image.Image image7 = new javafx.scene.image.Image(getClass().getResource("seven.jpg").toExternalForm());
+        ImageView iv7 = new ImageView(image7);
+        iv7.setFitWidth(50);
+        iv7.setFitHeight(40);
+        //for image 8
+        javafx.scene.image.Image image8 = new javafx.scene.image.Image(getClass().getResource("eight.jpg").toExternalForm());
+        ImageView iv8 = new ImageView(image8);
+        iv8.setFitWidth(50);
+        iv8.setFitHeight(40);
+        //for image 9
+        javafx.scene.image.Image image9 = new javafx.scene.image.Image(getClass().getResource("nine.jpg").toExternalForm());
+        ImageView iv9 = new ImageView(image9);
+        iv9.setFitWidth(50);
+        iv9.setFitHeight(40);
+        //for image 0
+        javafx.scene.image.Image image0 = new javafx.scene.image.Image(getClass().getResource("zero.jpg").toExternalForm());
+        ImageView iv0 = new ImageView(image0);
+        iv0.setFitWidth(50);
+        iv0.setFitHeight(40);
+        //for image point
+        javafx.scene.image.Image image10 = new javafx.scene.image.Image(getClass().getResource("point.jpg").toExternalForm());
+        ImageView iv10 = new ImageView(image10);
+        iv10.setFitWidth(50);
+        iv10.setFitHeight(40);
+        //for image plus
+        javafx.scene.image.Image image11 = new javafx.scene.image.Image(getClass().getResource("plus.png").toExternalForm());
+        ImageView iv11 = new ImageView(image11);
+        iv11.setFitWidth(50);
+        iv11.setFitHeight(40);
+        //for image minus
+        javafx.scene.image.Image image12 = new javafx.scene.image.Image(getClass().getResource("minus.jpeg").toExternalForm());
+        ImageView iv12 = new ImageView(image12);
+        iv12.setFitWidth(50);
+        iv12.setFitHeight(40);
+        //for image multiply
+        javafx.scene.image.Image image13 = new javafx.scene.image.Image(getClass().getResource("multiply.jpg").toExternalForm());
+        ImageView iv13 = new ImageView(image13);
+        iv13.setFitWidth(50);
+        iv13.setFitHeight(40);
+        //for image divide
+        javafx.scene.image.Image image14 = new javafx.scene.image.Image(getClass().getResource("divide.jpg").toExternalForm());
+        ImageView iv14 = new ImageView(image14);
+        iv14.setFitWidth(50);
+        iv14.setFitHeight(40);
+        //for image equals
+        javafx.scene.image.Image image15 = new javafx.scene.image.Image(getClass().getResource("equals.png").toExternalForm());
+        ImageView iv15 = new ImageView(image15);
+        iv15.setFitWidth(50);
+        iv15.setFitHeight(40);
+        //for image clear
+        javafx.scene.image.Image image16 = new javafx.scene.image.Image(getClass().getResource("clear.jpg").toExternalForm());
+        ImageView iv16 = new ImageView(image16);
+        iv16.setFitWidth(50);
+        iv16.setFitHeight(40);
+
+
+
+        //creating buttons
         Button b0 = new Button("0");
         Button b1 = new Button("1");
         Button b2 = new Button("2");
@@ -75,7 +140,26 @@ public class Calculator extends Application {
         Button b14 = new Button("/");
         Button b15 = new Button("=");
 
-        b0.setGraphic(iv);
+        //setting images to button
+        b0.setGraphic(iv0);
+        b1.setGraphic(iv1);
+        b2.setGraphic(iv);
+        b3.setGraphic(iv3);
+        b4.setGraphic(iv4);
+        b5.setGraphic(iv5);
+        b6.setGraphic(iv6);
+        b7.setGraphic(iv7);
+        b8.setGraphic(iv8);
+        b9.setGraphic(iv9);
+        point.setGraphic(iv10);
+        b11.setGraphic(iv11);
+        b12.setGraphic(iv12);
+        b13.setGraphic(iv13);
+        b14.setGraphic(iv14);
+        b15.setGraphic(iv15);
+        ac.setGraphic(iv16);
+
+
 
         gri.add(b0, 0, 0, 1, 1);
         gri.add(b1, 1, 0, 1, 1);
