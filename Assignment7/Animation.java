@@ -1,6 +1,8 @@
 
 
+import javafx.animation.*;
 import javafx.application.Application;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -10,6 +12,7 @@ import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.event.*;
 import javafx.scene.input.*;
+import javafx.util.Duration;
 //sphere, cylinder, box, polygon
 //RotateTransition, ScaleTransition, SequentialTransition
 //FadeTransition for polygon shape
@@ -80,7 +83,7 @@ public class Animation extends Application {
         GridPane button = new GridPane();
         button.setHgap(10);
         button.setVgap(10);
-        button.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+      //  button.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
 
 
         //attaching menubar to button grid
@@ -91,7 +94,7 @@ public class Animation extends Application {
         b.setWidth(80);
         b.setHeight(80);
         PhongMaterial ph2 = new PhongMaterial();
-        ph2.setDiffuseColor(Color.ORANGE);
+        ph2.setDiffuseColor(Color.YELLOWGREEN);
         b.setMaterial(ph2);
 
         b.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -106,7 +109,7 @@ public class Animation extends Application {
 
         Cylinder c = new Cylinder();
         c.setHeight(80);
-        c.setRadius(80);
+        c.setRadius(40);
         PhongMaterial ph1 = new PhongMaterial();
         ph1.setDiffuseColor(Color.ORANGE);
         c.setMaterial(ph1);
@@ -132,13 +135,22 @@ public class Animation extends Application {
         p.setHgap(10);
         p.setVgap(10);
 
+        //Vertical separator
+        Separator separator1 = new Separator();
+        separator1.setOrientation(Orientation.VERTICAL);
+        separator1.setMaxWidth(40);
+        //separator1.setStyle("-fx-background-color: #fee22a;");
+        separator1.setStyle("-fx-background-color: #fee22a; ");
+
+
         p.add(bgrid, 0, 0, 1, 1);
-        p.add(cgrid, 1, 0, 1, 1);
+        p.add(separator1, 1, 0, 1, 1);
+        p.add(cgrid, 2, 0, 1, 1);
 
 
 
         Sphere s = new Sphere();
-        s.setRadius(80);
+        s.setRadius(40);
         PhongMaterial ph = new PhongMaterial();
         ph.setDiffuseColor(Color.ORANGE);
         s.setMaterial(ph);
@@ -167,16 +179,22 @@ public class Animation extends Application {
                 poly.setFill(Color.RED);
             }
         });
+        //Vertical separator
+        Separator separator = new Separator();
+        separator.setOrientation(Orientation.VERTICAL);
+        separator.setMaxWidth(40);
+        separator.setStyle("-fx-background-color: #fee22a;");
 
 
         GridPane gri = new GridPane();
         gri.setHgap(10);
         gri.add(s, 0, 0, 1, 1);
-        gri.add(poly, 1, 0, 1, 1);
+        gri.add(separator, 1, 0, 1, 1);
+        gri.add(poly, 2, 0, 1, 1);
 
         //adding border to p and gri
         p.setBorder(new Border(new BorderStroke(Color.YELLOW, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
-        gri.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+        gri.setBorder(new Border(new BorderStroke(Color.YELLOW, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
 
 
         //adding event handlers for rotating shapes
@@ -271,22 +289,82 @@ public class Animation extends Application {
             }
         });
 
-        //adding event handlers for sequential transition for shapes
+        //adding event handlers for fading transition for polygon
+        polyfade.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                FadeTransition f = new FadeTransition(Duration.millis(3000), poly);
+                f.setFromValue(1.0);
+                f.setToValue(0.4);
+                f.setCycleCount(6);
+                f.setAutoReverse(true);
+                f.play();
+            }
+        });
+
+
+        final Duration SEC_2 = Duration.millis(2000);
+        final Duration SEC_3 = Duration.millis(3000);
+
+
+        RotateTransition rt = new RotateTransition(SEC_3);
+        rt.setByAngle(180f);
+        rt.setCycleCount(4);
+        rt.setAutoReverse(true);
+        ScaleTransition st = new ScaleTransition(SEC_2);
+        st.setByX(1.5f);
+        st.setByY(1.5f);
+        st.setCycleCount(2);
+        st.setAutoReverse(true);
+
+
+        //adding sequential transition for box
+
+        boxSeq.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                SequentialTransition seqT = new SequentialTransition (b, rt, st);
+                seqT.play();
+            }
+        });
+
+
+        //adding sequential transition for polygon
+        polygonSeq.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                SequentialTransition seqPoly = new SequentialTransition (poly, rt, st);
+                seqPoly.play();
+            }
+        });
+
+        //adding sequential transition for sphere
+        sphereSeq.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                SequentialTransition seqSphere = new SequentialTransition (s,rt, st);
+                seqSphere.play();
+            }
+        });
+
+        //adding sequential transition for cylinder
         cylinderSeq.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                PhongMaterial ph = new PhongMaterial();
-                ph.setDiffuseColor(Color.YELLOWGREEN);
-                c.setMaterial(ph);
-                
+                SequentialTransition  seqcylinder= new SequentialTransition (c,rt, st);
+                seqcylinder.play();
             }
         });
 
 
 
 
+        //Vertical separator
+        Separator separator2 = new Separator();
+        separator2.setOrientation(Orientation.VERTICAL);
 
-        p1.setStyle("-fx-background-color: #CC2AFE;");
+
+        p1.setStyle("-fx-background-color: #ff75ac");
         p1.add(p, 0, 0, 1, 1);
         p1.add(gri, 0, 1, 1, 1);
         p1.add(button, 1, 0, 1, 1);
