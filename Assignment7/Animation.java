@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -111,7 +112,7 @@ public class Animation extends Application {
         c.setHeight(80);
         c.setRadius(40);
         PhongMaterial ph1 = new PhongMaterial();
-        ph1.setDiffuseColor(Color.ORANGE);
+        ph1.setDiffuseColor(Color.RED);
         c.setMaterial(ph1);
 
         c.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -152,8 +153,12 @@ public class Animation extends Application {
         Sphere s = new Sphere();
         s.setRadius(40);
         PhongMaterial ph = new PhongMaterial();
-        ph.setDiffuseColor(Color.ORANGE);
+        ph.setDiffuseColor(Color.HOTPINK);
         s.setMaterial(ph);
+        javafx.scene.image.Image tree = new javafx.scene.image.Image(getClass().getResource("tree.jpeg").toExternalForm());
+        PhongMaterial earthPhong = new PhongMaterial();
+        earthPhong.setDiffuseMap(tree);
+        s.setMaterial(earthPhong);
 
         s.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
@@ -307,15 +312,20 @@ public class Animation extends Application {
         final Duration SEC_3 = Duration.millis(3000);
 
 
-        RotateTransition rt = new RotateTransition(SEC_3);
-        rt.setByAngle(180f);
-        rt.setCycleCount(4);
-        rt.setAutoReverse(true);
-        ScaleTransition st = new ScaleTransition(SEC_2);
-        st.setByX(1.5f);
-        st.setByY(1.5f);
-        st.setCycleCount(2);
-        st.setAutoReverse(true);
+        RotateTransition r = new RotateTransition(SEC_3);
+        r.setByAngle(180f);
+        r.setCycleCount(4);
+        r.setAutoReverse(true);
+        ScaleTransition stt = new ScaleTransition(SEC_2);
+        stt.setByX(1.5f);
+        stt.setByY(1.5f);
+        stt.setCycleCount(2);
+        stt.setAutoReverse(true);
+        FadeTransition ftt = new FadeTransition(SEC_3);
+        ftt.setFromValue(1.0f);
+        ftt.setToValue(0.3f);
+        ftt.setCycleCount(2);
+        ftt.setAutoReverse(true);
 
 
         //adding sequential transition for box
@@ -323,7 +333,7 @@ public class Animation extends Application {
         boxSeq.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                SequentialTransition seqT = new SequentialTransition (b, rt, st);
+                SequentialTransition seqT = new SequentialTransition (b, r, stt);
                 seqT.play();
             }
         });
@@ -333,7 +343,7 @@ public class Animation extends Application {
         polygonSeq.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                SequentialTransition seqPoly = new SequentialTransition (poly, rt, st);
+                SequentialTransition seqPoly = new SequentialTransition (poly, r, stt);
                 seqPoly.play();
             }
         });
@@ -342,7 +352,7 @@ public class Animation extends Application {
         sphereSeq.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                SequentialTransition seqSphere = new SequentialTransition (s,rt, st);
+                SequentialTransition seqSphere = new SequentialTransition (s,ftt, stt);
                 seqSphere.play();
             }
         });
@@ -351,7 +361,7 @@ public class Animation extends Application {
         cylinderSeq.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                SequentialTransition  seqcylinder= new SequentialTransition (c,rt, st);
+                SequentialTransition  seqcylinder= new SequentialTransition (c,r, stt);
                 seqcylinder.play();
             }
         });
